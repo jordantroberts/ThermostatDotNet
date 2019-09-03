@@ -34,5 +34,12 @@ namespace ThermostatDotNet.Controllers
             _Temperature += 1;
             return _Temperature;
         }
+
+        [HttpGet, Route("Decrease")]
+        public int Decrease()
+        {
+            _Temperature -= 1;
+            return _Temperature;
+        }
     }
 }

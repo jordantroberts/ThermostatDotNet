@@ -23,5 +23,14 @@ namespace ThermostatTests
             int expected = 19;
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void DecreasesTempByOne()
+        {
+            var controller = new ThermostatController(18);
+            int actual = controller.Decrease();
+            int expected = 17;
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
