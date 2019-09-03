@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThermostatDotNet", "ThermostatDotNet\ThermostatDotNet.csproj", "{84270DED-1527-4C55-8FB8-5B70DDF81145}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThermostatDotNetTests", "ThermostatDotNetTests\ThermostatDotNetTests.csproj", "{6219277D-8C4F-4A2E-945C-70A2BBA05114}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84270DED-1527-4C55-8FB8-5B70DDF81145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84270DED-1527-4C55-8FB8-5B70DDF81145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84270DED-1527-4C55-8FB8-5B70DDF81145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84270DED-1527-4C55-8FB8-5B70DDF81145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6219277D-8C4F-4A2E-945C-70A2BBA05114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6219277D-8C4F-4A2E-945C-70A2BBA05114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6219277D-8C4F-4A2E-945C-70A2BBA05114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6219277D-8C4F-4A2E-945C-70A2BBA05114}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
