@@ -26,6 +26,7 @@ namespace ThermostatDotNet.Controllers
     public class ThermostatController : Controller
     {
         private readonly ITemperature _temperature;
+
         private int _Temperature { get; set; }
 
         public ThermostatController(ITemperature temperature)
@@ -33,10 +34,15 @@ namespace ThermostatDotNet.Controllers
             _temperature = temperature;
         }
 
-        [HttpGet, Route("GetTemp")]
-        public string GetTemp()
+        public ThermostatController(int temp)
         {
-            return _Temperature.ToString();
+            _Temperature = temp;
+        }
+
+        [HttpGet, Route("GetTemp")]
+        public int GetTemp()
+        {
+            return _Temperature;
         }
 
         [HttpGet, Route("Reset")]
