@@ -12,7 +12,7 @@ export class Thermostat extends Component {
        fetch("api/Thermostat/Increase?newTemp=" + encodeURIComponent(this.state.temp))
      .then(response => response.text())
       .then(data => {
-          this.setState({ temp: data }, () => console.log(this.state));
+          this.setState({ temp: data });
            
       });
     }
@@ -39,7 +39,7 @@ export class Thermostat extends Component {
         <h1>Thermostat</h1>
             <p>The temperature is: {this.state.temp}°C</p>
 
-         <button onClick={() => this.resetTemp()}>Reset</button>
+          <button onClick={() => this.resetTemp()}>Reset</button>
           <button onClick={() => this.increaseTemp()}>Increase</button>
           <button onClick={() => this.decreaseTemp()}>Decrease</button>
         

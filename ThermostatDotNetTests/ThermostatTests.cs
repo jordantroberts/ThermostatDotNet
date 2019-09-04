@@ -31,7 +31,7 @@ namespace ThermostatTests
         {
             var thermostat = new ThermostatController();
             thermostat.Reset();
-            int actual = thermostat.Increase();
+            int actual = thermostat.Increase(20);
             int expected = 21;
             Assert.AreEqual(expected, actual);
         }
@@ -41,7 +41,7 @@ namespace ThermostatTests
         {
             var thermostat = new ThermostatController();
             thermostat.Reset();
-            int actual = thermostat.Decrease();
+            int actual = thermostat.Decrease(20);
             int expected = 19;
             Assert.AreEqual(expected, actual);
         }
@@ -51,10 +51,10 @@ namespace ThermostatTests
         {
             var thermostat = new ThermostatController();
             thermostat.Reset();
-            thermostat.Decrease();
-            thermostat.Decrease();
-            thermostat.Increase();
-            int actual = thermostat.Decrease();
+            var temp1 = thermostat.Decrease(20);
+            var temp2 =thermostat.Decrease(temp1);
+            var temp3 = thermostat.Increase(temp2);
+            int actual = thermostat.Decrease(temp3);
             int expected = 18;
             Assert.AreEqual(expected, actual);
         }
