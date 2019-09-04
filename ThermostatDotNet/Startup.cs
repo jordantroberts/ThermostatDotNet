@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ThermostatDotNet.Controllers;
 
 namespace ThermostatDotNet
 {
@@ -27,6 +28,8 @@ namespace ThermostatDotNet
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddSingleton<ITemperature, Temperature>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -6,6 +6,16 @@ namespace ThermostatTests
 {
     public class ThermostatTests
     {
+
+        [Test]
+        public void ReturnsCurrentTemperature()
+        {
+            var controller = new ThermostatController(18);
+            int actual = controller.GetTemp();
+            int expected = 18;
+            Assert.AreEqual(expected, actual);
+        }
+
         [Test]
         public void ResetsTemperatureOnThermostat()
         {

@@ -6,19 +6,37 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ThermostatDotNet.Controllers
 {
+
+    public interface ITemperature
+    {
+        string GetTemp();
+    }
+
+    public class Temperature : ITemperature
+    {
+        private int _Temperature { get; set; }
+
+        public string GetTemp()
+        {
+            return _Temperature.ToString();
+        }
+    }
+
     [Route("api/[controller]")]
     public class ThermostatController : Controller
     {
-
+        private readonly ITemperature _temperature;
         private int _Temperature { get; set; }
 
-        public ThermostatController(int _temperature)
+        public ThermostatController(ITemperature temperature)
         {
-            _Temperature = _temperature;
+            _temperature = temperature;
         }
 
-        public ThermostatController()
+        [HttpGet, Route("GetTemp")]
+        public string GetTemp()
         {
+            return _Temperature.ToString();
         }
 
         [HttpGet, Route("Reset")]
