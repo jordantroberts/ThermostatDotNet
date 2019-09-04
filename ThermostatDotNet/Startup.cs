@@ -29,7 +29,7 @@ namespace ThermostatDotNet
                 configuration.RootPath = "ClientApp/build";
             });
 
-            services.AddSingleton<ITemperature, Temperature>();
+            //services.AddSingleton<ITemperature, Temperature>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

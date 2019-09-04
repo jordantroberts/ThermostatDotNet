@@ -10,17 +10,18 @@ namespace ThermostatTests
         [Test]
         public void ReturnsCurrentTemperature()
         {
-            var controller = new ThermostatController(18);
-            int actual = controller.GetTemp();
-            int expected = 18;
+            var thermostat = new ThermostatController();
+            thermostat.Reset();
+            int actual = thermostat.GetTemp();
+            int expected = 20;
             Assert.AreEqual(expected, actual);
         }
 
         [Test]
         public void ResetsTemperatureOnThermostat()
         {
-            var controller = new ThermostatController(18);
-            int actual = controller.Reset();
+            var thermostat = new ThermostatController();
+            int actual = thermostat.Reset();
             int expected = 20;
             Assert.AreEqual(expected, actual);
         }
@@ -28,18 +29,20 @@ namespace ThermostatTests
         [Test]
         public void IncreasesTempByOne()
         {
-            var controller = new ThermostatController(18);
-            int actual = controller.Increase();
-            int expected = 19;
+            var thermostat = new ThermostatController();
+            thermostat.Reset();
+            int actual = thermostat.Increase();
+            int expected = 21;
             Assert.AreEqual(expected, actual);
         }
 
         [Test]
         public void DecreasesTempByOne()
         {
-            var controller = new ThermostatController(18);
-            int actual = controller.Decrease();
-            int expected = 17;
+            var thermostat = new ThermostatController();
+            thermostat.Reset();
+            int actual = thermostat.Decrease();
+            int expected = 19;
             Assert.AreEqual(expected, actual);
         }
     }
