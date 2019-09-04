@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export class Thermostat extends Component {
     constructor(props) {
         super(props);
-        this.state = { temp: "" };
+        this.state = { temp: 20 };
     }
     
 
@@ -35,14 +35,14 @@ export class Thermostat extends Component {
  
   render () {
     return (
-      <div>
-        <h1>Thermostat</h1>
-            <p>The temperature is: {this.state.temp}°C</p>
-
-          <button onClick={() => this.resetTemp()}>Reset</button>
-          <button onClick={() => this.increaseTemp()}>Increase</button>
-          <button onClick={() => this.decreaseTemp()}>Decrease</button>
-        
+        <div>
+         <center>
+             <h1>Thermostat</h1>
+                 <p>The temperature is: {this.state.temp}°C</p>
+                     <button onClick={() => this.resetTemp()}>Reset</button>
+                     <button onClick={() => this.increaseTemp()}>Increase</button>
+                     <button onClick={() => this.decreaseTemp()}>Decrease</button>
+          </center>
        </div>
     );
   }
