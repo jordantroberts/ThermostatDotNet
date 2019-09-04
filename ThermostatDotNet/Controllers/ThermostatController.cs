@@ -15,8 +15,6 @@ namespace ThermostatDotNet.Controllers
         public ThermostatController()
         {
             _Temperature = 20;
-            Console.WriteLine("Hello");
-
         }
 
         [HttpGet, Route("GetTemp")]
@@ -35,14 +33,22 @@ namespace ThermostatDotNet.Controllers
         [HttpGet, Route("Increase")]
         public int Increase(int newTemp)
         {
-            newTemp += 1;
+            if (newTemp < 30)
+            {
+                newTemp += 1;
+            }
+
             return newTemp;
         }
 
         [HttpGet, Route("Decrease")]
         public int Decrease(int newTemp)
         {
-            newTemp -= 1;
+            if (newTemp > 10)
+            {
+                newTemp -= 1;
+            }
+  
             return newTemp;
         }
     }
