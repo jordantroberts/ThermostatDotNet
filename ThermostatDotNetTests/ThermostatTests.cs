@@ -45,5 +45,18 @@ namespace ThermostatTests
             int expected = 19;
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void DecreasesAndIncreases()
+        {
+            var thermostat = new ThermostatController();
+            thermostat.Reset();
+            thermostat.Decrease();
+            thermostat.Decrease();
+            thermostat.Increase();
+            int actual = thermostat.Decrease();
+            int expected = 18;
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
