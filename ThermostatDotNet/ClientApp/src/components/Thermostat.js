@@ -1,5 +1,6 @@
 ﻿
 import React, { Component } from 'react';
+import "./Thermostat.css";
 
 export class Thermostat extends Component {
     constructor(props) {
@@ -39,9 +40,9 @@ export class Thermostat extends Component {
          <center>
              <h1>Thermostat</h1>
                  <p>The temperature is: {this.state.temp}°C</p>
-                     <button onClick={() => this.resetTemp()}>Reset</button>
-                     <button onClick={() => this.increaseTemp()}>Increase</button>
-                     <button onClick={() => this.decreaseTemp()}>Decrease</button>
+                     <button className="button" onClick={() => this.resetTemp()}>Reset</button>
+                     <button className="button" onClick={() => this.increaseTemp()}>Increase</button>
+                     <button className="button" onClick={() => this.decreaseTemp()}>Decrease</button>
           </center>
        </div>
     );
