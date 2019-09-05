@@ -4,10 +4,9 @@ import "./Thermostat.css";
 import ThermostatImage from './ThermostatImage.jpg'; 
 
 export class Thermostat extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { temp: 20 };
-    }
+    state = {
+        temp: 20
+    };
     
 
     increaseTemp() {
