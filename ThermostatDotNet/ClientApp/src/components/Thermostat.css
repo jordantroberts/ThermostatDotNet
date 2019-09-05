@@ -10,7 +10,12 @@
     padding: 15px 15px;
 }
 
-    .button:hover {
-        background-color: #8dd49b;
-        color: white;
-    }
+.button:hover {
+    background-color: #8dd49b;
+    color: white;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+}
