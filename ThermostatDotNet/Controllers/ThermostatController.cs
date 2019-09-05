@@ -11,10 +11,13 @@ namespace ThermostatDotNet.Controllers
     {
 
         private int _Temperature { get; set; }
+        private const int _MinTemp = 10;
+        private const int _MaxTemp = 30;
 
         public ThermostatController()
         {
             _Temperature = 20;
+
         }
 
         [HttpGet, Route("GetTemp")]
@@ -33,7 +36,7 @@ namespace ThermostatDotNet.Controllers
         [HttpGet, Route("Increase")]
         public int Increase(int newTemp)
         {
-            if (newTemp < 30)
+            if (newTemp < _MaxTemp)
             {
                 newTemp += 1;
             }
@@ -44,7 +47,7 @@ namespace ThermostatDotNet.Controllers
         [HttpGet, Route("Decrease")]
         public int Decrease(int newTemp)
         {
-            if (newTemp > 10)
+            if (newTemp > _MinTemp)
             {
                 newTemp -= 1;
             }
