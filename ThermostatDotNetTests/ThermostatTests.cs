@@ -58,5 +58,26 @@ namespace ThermostatTests
             int expected = 18;
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void WillNotExceedMaximumTemperature()
+        {
+            var thermostat = new ThermostatController();
+            thermostat.Reset();
+            int actual = thermostat.Increase(30);
+            int expected = 30;
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [Test]
+        public void WillNotGoBelowMinTemperature()
+        {
+            var thermostat = new ThermostatController();
+            thermostat.Reset();
+            int actual = thermostat.Decrease(10);
+            int expected = 10;
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
