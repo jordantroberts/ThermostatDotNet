@@ -7,13 +7,11 @@ namespace ThermostatTests {
     [TestFixture]
     public class ThermostatTests {
 
-        private ThermostatController thermostat;
+        private ThermostatController thermostat; // need to make thermostat a field to make sure it's accessible 
 
         [SetUp]
         public void Init () {
             thermostat = new ThermostatController ();
-            thermostat.Reset ();
-
         }
 
         [Test]
