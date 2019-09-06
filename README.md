@@ -19,7 +19,7 @@ Alternatively, this program has been published to Azure <a href="https://thermos
 ## How to use this program
 
 <div align="center">
-    <img src="./ClientApp/public/Screenshot.png" width="600px"</img>
+    <img src="./ThermostatDotNet/ClientApp/public/Screenshot.png" width="600px"</img>
 </div>
 
 The minimum temperature has been set at 10 degrees, the maximum at 30 degrees and the default at 20 degrees (which you can change in the code if you like). You can increase and decrease the thermostat temperature within this range. The 'reset' button will reset the temperature back to 20 degrees.
