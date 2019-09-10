@@ -10,7 +10,7 @@ namespace ThermostatDotNet.Controllers {
 
         private int _Temperature { get; set; }
         private const int _MinTemp = 10;
-        private int _MaxTemp = 30;
+        private const int _MaxTemp = 30;
         private const int _DefaultTemp = 20;
 
         public ThermostatController () {
