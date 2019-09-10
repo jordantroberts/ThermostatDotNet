@@ -34,6 +34,7 @@ export class Thermostat extends Component {
        this.setState({ temp: data });
       });
     }
+    
 
   render () {
     return (
@@ -44,7 +45,7 @@ export class Thermostat extends Component {
                 <p> <img className="image" src={ThermostatImage} alt={"thermostatimage"}/></p>
                      <button className="button" onClick={() => this.resetTemp()}>Reset</button>
                      <button className="button" onClick={() => this.increaseTemp()}>Increase</button>
-                     <button className="button" onClick={() => this.decreaseTemp()}>Decrease</button>
+                <button className="button" onClick={() => this.decreaseTemp()}>Decrease</button>
           </center>
         </div>
     );
