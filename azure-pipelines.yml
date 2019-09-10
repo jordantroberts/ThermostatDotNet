@@ -25,8 +25,8 @@ steps:
 - task: AzureRmWebAppDeployment@4
   displayName: 'Azure App Service Deploy: ThermostatTestProject'
   inputs:
-    azureSubscription: '$(Parameters.connectedServiceName)'
-    WebAppName: '$(Parameters.WebAppName)'
+    azureSubscription: 'Free Trial (4644d7e7-9bf3-467e-89c0-8b7ddfe0fb73)'
+    WebAppName: 'ThermostatTestProject'
     packageForLinux: '$(build.artifactstagingdirectory)/**/*.zip'
 
 - task: PublishSymbols@2
