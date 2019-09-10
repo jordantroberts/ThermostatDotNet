@@ -26,7 +26,7 @@ namespace ThermostatTests {
         public void ResetsTemperatureOnThermostat () {
             thermostat.Increase(22);
             int actual = thermostat.Reset ();
-            int expected = 25;
+            int expected = 20;
             Assert.AreEqual (expected, actual);
         }
 
