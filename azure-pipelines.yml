@@ -16,9 +16,7 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
-- task: DotNetCoreCLI@2
-displayName: Test
-inputs:
+- inputs:
    command: test
    projects: 'PathToTestProject/TestProject.csproj'
    arguments: '--configuration Debug'
