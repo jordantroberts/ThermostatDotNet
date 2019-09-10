@@ -21,3 +21,23 @@ steps:
     command: test
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
+
+- task: AzureRmWebAppDeployment@4
+  displayName: 'Azure App Service Deploy: ThermostatTestProject'
+  inputs:
+    azureSubscription: '4644d7e7-9bf3-467e-89c0-8b7ddfe0fb73'
+    WebAppName: 'ThermostatTestProject'
+    packageForLinux: '$(build.artifactstagingdirectory)/**/*.zip'
+
+- task: PublishSymbols@2
+  displayName: 'Publish symbols path'
+  inputs:
+    SearchPattern: '**\bin\**\*.pdb'
+    PublishSymbols: false
+  continueOnError: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
