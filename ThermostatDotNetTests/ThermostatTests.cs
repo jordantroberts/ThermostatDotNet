@@ -18,7 +18,7 @@ namespace ThermostatTests {
         public void ReturnsCurrentTemperature () {
 
             int actual = thermostat.GetTemp ();
-            int expected = 25;
+            int expected = 20;
             Assert.AreEqual (expected, actual);
         }
 
