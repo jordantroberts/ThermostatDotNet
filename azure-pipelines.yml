@@ -22,28 +22,22 @@ steps:
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
 
-- task: DotNetCoreCLI@2
+- task: AzureRmWebAppDeployment@4
+  displayName: 'Azure App Service Deploy: ThermostatTestProject'
   inputs:
-    command: publish
-    publishWebProjects: True
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: True
+    azureSubscription: '$(Parameters.connectedServiceName)'
+    WebAppName: '$(Parameters.WebAppName)'
+    packageForLinux: '$(build.artifactstagingdirectory)/**/*.zip'
 
-# this code takes all the files in $(Build.ArtifactStagingDirectory) and uploads them as an artifact of your build.
+- task: PublishSymbols@2
+  displayName: 'Publish symbols path'
+  inputs:
+    SearchPattern: '**\bin\**\*.pdb'
+    PublishSymbols: false
+  continueOnError: true
+
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
   inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: 'myWebsiteName'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: publish
-    publishWebProjects: True
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: True
-
-  - task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Free Trial (4644d7e7-9bf3-467e-89c0-8b7ddfe0fb73)'
-    appName: 'ThermostatTestProject'
-    package: $(System.ArtifactsDirectory)/**/*.zip
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
