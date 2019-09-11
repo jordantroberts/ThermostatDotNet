@@ -41,7 +41,7 @@ export class Thermostat extends Component {
         <div>
          <center>
              <h1>Thermostat</h1>
-                <p>The temperature is: {this.state.temp}°C</p>
+                <p>The current temperature is: {this.state.temp}°C</p>
                 <p> <img className="image" src={ThermostatImage} alt={"thermostatimage"}/></p>
                      <button className="button" onClick={() => this.resetTemp()}>Reset</button>
                      <button className="button" onClick={() => this.increaseTemp()}>Increase</button>
