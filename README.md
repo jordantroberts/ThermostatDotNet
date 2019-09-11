@@ -1,5 +1,7 @@
 # Thermostat
 
+[![Build Status](https://dev.azure.com/jordanroberts0573/JordanTestProject/_apis/build/status/jordantroberts.ThermostatDotNet?branchName=master)](https://dev.azure.com/jordanroberts0573/JordanTestProject/_build/latest?definitionId=1&branchName=master)
+
 Rebuilding my Makers Academy <a href="https://github.com/jordantroberts/thermostat-js">Thermostat</a> project as a single page application using .NET Core, with C# for the backend and React for the frontend.
 
 ## How to run this program
