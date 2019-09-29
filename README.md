@@ -13,6 +13,8 @@ Rebuilding my Makers Academy <a href="https://github.com/jordantroberts/thermost
 
 Alternatively, this program has been published to Azure <a href="https://thermostattestproject.azurewebsites.net/">here</a> :)
 
+*Update* My Azure free trial has ended :'( So to run the program please use steps 1 - 4 above :)
+
 ## How to test this program
 
 1. Follow steps 1 and 2 above.
